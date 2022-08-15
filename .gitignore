@@ -1,0 +1,5 @@
+# Soft link
+llvm-project
+
+# Build folder create by cmake
+build/
