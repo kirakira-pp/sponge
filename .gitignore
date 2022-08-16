@@ -4,5 +4,8 @@ llvm-project
 # Build folder create by cmake
 build/
 
-# Visual Studio Code
+# Vscode
 .vscode/
+
+# vim swap file
+*.swp
