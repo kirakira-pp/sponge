@@ -3,3 +3,6 @@ llvm-project
 
 # Build folder create by cmake
 build/
+
+# VSCode
+.vscode/
