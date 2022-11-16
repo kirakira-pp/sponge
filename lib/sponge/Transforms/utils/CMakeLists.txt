@@ -1,5 +1,6 @@
-add_mlir_library(MLIRspongeTransforms
-PassesImplementation.cpp
+add_mlir_library(MLIRspongeTransformsUtils
+aff.cpp
+
 
   DEPENDS
   #MLIRsponge
@@ -12,8 +13,4 @@ PassesImplementation.cpp
   MLIRIR
   MLIRPass
   MLIRTransformUtils
-  MLIRspongeTransformsUtils
 )
-
-
-add_subdirectory(utils)

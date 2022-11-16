@@ -11,6 +11,8 @@
 using namespace mlir;
 using namespace sponge;
 
+#include "sponge/spongeDialect.cpp.inc"
+
 //===----------------------------------------------------------------------===//
 // sponge dialect.
 //===----------------------------------------------------------------------===//

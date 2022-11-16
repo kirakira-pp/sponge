@@ -21,25 +21,22 @@
 
 #include "sponge/sponge.h"
 // If not include this, the vtable of sponge::spongeDialect::spongeDialect will be disappear.
-#include "sponge/spongeDialect.cpp.inc"
+// #include "sponge/spongeDialect.cpp.inc"
 #include "sponge/Transforms/Passes.h"
 
 
 int main(int argc, char **argv) {
-  // TODO: Register your passes here.
+  // Register Dialect
+  mlir::DialectRegistry registry;
+  registerAllDialects(registry);
+  registry.insert<sponge::spongeDialect>();
 
   // Register Passes
   mlir::registerAllPasses();
   sponge::registerspongePasses();
 
-  // Register Dialect
-  mlir::DialectRegistry registry;
-  registry.insert<sponge::spongeDialect>();
-  // Add the following to include *all* MLIR Core dialects, or selectively
-  // include what you need like above. You only need to register dialects that
-  // will be *parsed* by the tool, not the one generated
-  registerAllDialects(registry);
-
   return mlir::asMainReturnCode(
-      mlir::MlirOptMain(argc, argv, "miniEmitC optimizer driver\n", registry));
+    // Attention: If preloadDialectsInContext is false, the rewriting will failed.
+    mlir::MlirOptMain(argc, argv, "sponge optimizer driver\n", registry, 
+                      /*preloadDialectsInContext*/true));
 }

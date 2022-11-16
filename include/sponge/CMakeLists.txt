@@ -6,4 +6,3 @@ add_mlir_dialect(sponge sponge)
 
 # Add subdirectory
 add_subdirectory(Transforms)
-

@@ -10,11 +10,13 @@
 #define DIALECT_SPONGE_TRANSFORMS_PASSDETAIL_H
 
 #include "mlir/Pass/Pass.h"
+// For Operations
+#include "mlir/IR/BuiltinOps.h"
+#include "mlir/Dialect/Func/IR/FuncOps.h"
 #include "mlir/Dialect/Affine/IR/AffineOps.h"
 
-// namespace mlir {
-// class AffineDialect;
-// }
+// Liveness
+#include "mlir/Analysis/Liveness.h"
 
 namespace sponge {
 
