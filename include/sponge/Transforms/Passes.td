@@ -24,5 +24,16 @@ def TestPass : Pass<"test-pass"> {
   let constructor = "sponge::createTestPass()";
 }
 
+//===----------------------------------------------------------------------===//
+//
+// liveness test pass
+//
+//===----------------------------------------------------------------------===//
+
+def LiveTestPass : Pass<"live-test-pass", "::mlir::func::FuncOp"> {
+  let summary = "A liveness test pass.";
+  let constructor = "sponge::createLiveTestPass()";
+}
+
 #endif // SPONGE_DIALECT_SPONGE_TRANSFORMS_PASSES
 

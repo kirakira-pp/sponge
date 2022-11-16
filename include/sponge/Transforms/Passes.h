@@ -22,6 +22,7 @@
 namespace sponge {
 
 std::unique_ptr<mlir::Pass> createTestPass();
+std::unique_ptr<mlir::Pass> createLiveTestPass();
 
 #define GEN_PASS_REGISTRATION
 #include "sponge/Transforms/Passes.h.inc"
